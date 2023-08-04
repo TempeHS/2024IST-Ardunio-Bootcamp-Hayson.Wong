@@ -16,8 +16,14 @@
     https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
 */
 
+String myString = "hello world";
+int   myint = 3;
+bool   mybool = false;
+float   myFloat = 3.14
+long    myLong = 3.1412926;
 void setup() {
-
+  Serial.begin(9600);
+  Serial.print("This is 9600");
 }
 
 void loop() {
