@@ -23,10 +23,21 @@
 
 */
 
+static unsigned int myLed = 8;
+static unsigned int myLed2 = 13;
+bool myToggle = false;
+
 void setup() {
+  Serial.begin(9600);
+  Serial.println("this monitor is 9600");
+  pinMode(myLed, OUTPUT); //configure the pin for output
 
 }
 
 void loop() {
-
+  myToggle = !myToggle;
+  digitalWrite(myLed, myToggle);
+  digitalWrite(myLed2, !myToggle);
+  delay(1000);
+  
 }
