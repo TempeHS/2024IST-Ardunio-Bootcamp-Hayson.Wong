@@ -19,13 +19,18 @@
 String myString = "hello world";
 int   myint = 3;
 bool   mybool = false;
-float   myFloat = 3.14
+float   myFloat = 3.14;
 long    myLong = 3.1412926;
+unsigned int myint2 = 5;
+static unsigned int myint3 = 7;
 void setup() {
   Serial.begin(9600);
   Serial.print("This is 9600");
 }
 
 void loop() {
-
+  mybool = true;
+  myString = mybool;
+  myint = myFloat;
+  Serial.println(String(myLong));
 }
