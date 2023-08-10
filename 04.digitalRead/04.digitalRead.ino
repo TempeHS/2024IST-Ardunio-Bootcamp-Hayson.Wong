@@ -19,11 +19,38 @@
   Schematic:
     https://github.com/TempeHS/TempeHS_Ardunio_Boilerplate/blob/main/Ardunio_Bootcamp/04.digitalRead/Bootcamp-digitalRead.png
 */
+static unsigned int myButton = 8;
+static unsigned int soundSensor = 7;
+static unsigned int lightSensor = 6;
+static unsigned int myLED = 5;
 
 void setup() {
-
+  Serial.begin(9600);
+ //  Serial.println("this monitor is 9600");
+  pinMode(myButton, INPUT);
+  pinMode(soundSensor, INPUT);
+  pinMode(lightSensor, INPUT);
+  pinMode(myLED, OUTPUT);
 }
 
-void loop() {
 
+void loop() {
+  unsigned int btnval = digitalRead(myButton);
+  Serial.print("ButtonValue:");
+  Serial.print(btnval);
+  Serial.print(",");
+  unsigned int sndval = digitalRead(soundSensor);
+  Serial.print("SoundValue:");
+  Serial.print(sndval);
+  Serial.print(",");
+  unsigned int litval = digitalRead(lightSensor);
+  Serial.print("LightValue:");
+  Serial.print(litval);
+
+    if (btnval) {
+        digitalWrite(myLED, HIGH);
+        delay(500);
+    }
+    digitalWrite(myLED, LOW);
+  Serial.println();
 }
